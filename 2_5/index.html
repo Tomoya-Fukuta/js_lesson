@@ -6,8 +6,29 @@
   <link rel="stylesheet" type="text/css" href="base.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  <script>
   $(function(){
-    // ここに処理を記述
+    
+    //-----<< JavaScript >>-----//
+    const button = document.getElementById('button');
+    const box = document.getElementById('box');
+
+    button.addEventListener('click', function() {
+      let text = document.getElementById('value');
+      if(text.value === "1") box.style.backgroundColor = 'red';
+      else if(text.value === "2") box.style.backgroundColor = 'green';
+      else if(text.value === "3") box.style.backgroundColor = 'blue';
+      else box.style.backgroundColor = "#aaa";
+    })
+
+    //-----<< jQuery >>-----//
+    $('#button').on('click', function() {
+      let text = $('#value').val();
+      if (text === "1") $('#box').css('background-color', 'red');
+      else if (text === "2") $('#box').css('background-color', 'green');
+      else if (text === "3") $('#box').css('background-color', 'blue');
+      else $('#box').css('background-color', '#aaa');
+    });
   });
+  
   </script>
 </head>
 <body>
