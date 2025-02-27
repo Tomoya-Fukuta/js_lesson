@@ -6,7 +6,43 @@
   <link rel="stylesheet" type="text/css" href="base.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  <script>
   $(function(){
-    // ここに処理を記述
+
+    const button = document.getElementById('button'); // idを取得
+    const windowWidth = innerWidth; // 画面の横幅を取得
+    const windowHeight = innerHeight; // 画面の縦幅を取得
+    const buttonSize = button.getBoundingClientRect(); // ボタンサイズを取得
+    const targetX = (windowWidth * 0.5) - (buttonSize.width * 0.5); // 移動後の横座標を設定
+    const targetY = (windowHeight * 0.5) - (buttonSize.height * 0.5); // 移動後の縦座標を設定
+
+    //-----<< JavaScript >>-----//
+    // button.addEventListener('click', function() {
+    //   button.animate([
+    //     {
+    //       transform: `translate(0px, 0px)` // 移動前座標の設定
+    //     },
+    //     {
+    //       // テンプレートリテラルを使う場合はバックティック(shift + @)を使うこと
+    //       transform: `translate(${targetX}px, ${targetY}px)` // 移動後座標の設定
+    //     }],
+    //     {
+    //       duration: 2000, // アニメーションの時間を設定
+    //       fill: 'forwards' // アニメーション終了後の位置を保持
+    //     }
+    //   );
+    // })
+
+    //-----<< jQuery >>-----//
+    $('#button').on('click', function() {
+      $(this).css({ // スタイルの追加・変更
+        'position': `absolute`, // 絶対座標に設定
+        'transform': `translate(0px, 0px)`, // 移動前座標の設定
+      });
+      $(this).animate({
+        left: targetX, // 移動後の横座標の設定
+        top: targetY // 移動後の縦座標の設定
+      }, 2000); // アニメーションの時間を設定
+    });
+
   });
   </script>
 </head>

@@ -4,11 +4,39 @@
   <meta charset="UTF-8">
   <title>クリックイベントと切り替え</title>
   <link rel="stylesheet" type="text/css" href="base.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  <script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
   $(function(){
-    // ここに処理を記述
-    
-  });
+
+    //-----<< JavaScript >>-----//
+    const js_button = ([
+      document.getElementById("button1"),
+      document.getElementById("button2"),
+      document.getElementById("button3")
+    ]);
+
+    for (let key in js_button) {
+      js_button[key].addEventListener('click', function() {
+        // すべてのボタンの背景色を初期値に設定
+        for (let resetKey in js_button) {
+          js_button[resetKey].style.backgroundColor = "#fdd";
+        }
+        // クリックされたボタンのみ背景色を変更
+        js_button[key].style.backgroundColor = "red";
+      });
+    }
+
+    //-----<< jQuery >>-----//
+    // const jq_button = $('#button1, #button2, #button3');
+    // jq_button.on('click', function() {
+    //   // すべてのボタンの背景色を初期値に設定
+    //   jq_button.css('background-color', '#fdd');
+
+    //   // クリックされたボタンのみ背景色を変更
+    //   $(this).css('background-color', 'red');
+    // });
+
+  })
   </script>
 </head>
 <body>

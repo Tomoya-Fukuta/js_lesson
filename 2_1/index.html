@@ -7,10 +7,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
   $(function(){
-    // ここに処理を記述
+    
+    //-----<< JavaScriptを使用した場合 >>-----//
+    const js_button = document.getElementById("button"); // idを取得
+    js_button.addEventListener(
+      'click', // イベントの種類
+      function() { // イベントが発生したときに実行される関数
+      alert('ボタンをクリックしました。') // イベントの内容
+    });
+
+    //-----<< jqueryを使用した場合 >>-----//
+    // const jq_button = $('#button');
+    // jq_button.on('click', function() {
+    //   alert('ボタンをクリックしました。')
+    // });
+
   });
-
-
 
   </script>
 </head>

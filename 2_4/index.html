@@ -6,7 +6,20 @@
   <link rel="stylesheet" type="text/css" href="base.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  <script>
   $(function(){
-    // ここに処理を記述
+
+    //-----<< JavaScript >>-----//
+    // const button = document.getElementById('button');
+
+    // button.addEventListener('click', function() {
+    //   let text = document.getElementById('value').value; // id取得後、フォーム内の値を取得し代入
+    //   alert(text);
+    // })
+
+    //-----<< jQuery >>-----//
+    $('#button').on('click', function() {
+      alert($('#value').val());
+    })
+
   });
   </script>
 </head>
